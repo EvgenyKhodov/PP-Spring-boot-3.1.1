@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.khodov.PPSpringboot311.entity.User;
-import ru.khodov.PPSpringboot311.service.UserService;
+import ru.khodov.PPSpringboot311.service.UserServiceImpl;
 
 import java.util.List;
 
 @Controller
 public class MyController {
 
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @Autowired
-    public MyController(UserService userService) {
+    public MyController(UserServiceImpl userService) {
         this.userService = userService;
     }
 

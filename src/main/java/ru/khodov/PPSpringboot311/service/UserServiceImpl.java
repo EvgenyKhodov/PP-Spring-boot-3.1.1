@@ -9,17 +9,13 @@ import ru.khodov.PPSpringboot311.repository.UserRepository;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserServiceImpl implements UserSevice  {
 
     private final UserRepository userRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }
-
-    public User findById(Long id){
-        return userRepository.getOne(id);
     }
 
     public List<User> findAll(){
@@ -30,7 +26,14 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void deleteById(Long id){
+
+    public User findById(long id) {
+        return userRepository.getOne(id);
+    }
+
+
+    public void deleteById(long id) {
         userRepository.deleteById(id);
     }
+
 }
